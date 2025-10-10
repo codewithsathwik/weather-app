@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,27 @@
     <link rel="stylesheet" href="/src/output.css">
     <link rel="stylesheet" href="/src/style.css">
 </head>
+
 <body class="bg-dark-bg flex justify-center items-center text-white h-screen">
-    <div class="min-h-[300px] min-w-[350px] bg-dark-black p-2 rounded-xl custom-shadow">
-        <h2 class="font-heading text-center p-1 text-xl">Weather App</h2>
+    <div
+        class="min-h-[300px] min-w-[350px] bg-dark-black p-2 rounded-xl custom-shadow flex flex-col justify-start items-center gap-1">
+        <h2 class="font-heading text-center p-1 text-2xl">Weather App</h2>
+
+        <!-- search bar -->
+        <div class="w-[90%]  h-11 flex justify-around items-center gap-2.5">
+            <div class="bg-dark-bg w-[83%] h-full rounded-[7px]">
+                <textarea name="search" id="cityName" class="w-full h-full text-xl p-1.5 text-start"></textarea>
+            </div>
+            <button id="search-btn" class="bg-dark-bg w-[17%] h-full rounded-[7px] cursor-pointer flex justify-center items-center hover:bg-blue-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16" id="search-svg"> 
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </button>
+        </div>
+        <!-- search bar completed-->
     </div>
 </body>
+
 </html>
