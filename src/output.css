@@ -9,9 +9,17 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-white: #fff;
+    --spacing: 0.25rem;
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --radius-xl: 0.75rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-heading: "Poppins", sans-serif;
     --color-dark-bg: #1a1a1a;
+    --color-dark-black: #111;
   }
 }
 @layer base {
@@ -169,6 +177,36 @@
   .table {
     display: table;
   }
+  .h-\[300px\] {
+    height: 300px;
+  }
+  .h-\[500px\] {
+    height: 500px;
+  }
+  .h-\[px\] {
+    height: px;
+  }
+  .h-screen {
+    height: 100vh;
+  }
+  .min-h-\[300px\] {
+    min-height: 300px;
+  }
+  .w-\[400px\] {
+    width: 400px;
+  }
+  .max-w-\[400px\] {
+    max-width: 400px;
+  }
+  .min-w-\[200px\] {
+    min-width: 200px;
+  }
+  .min-w-\[350px\] {
+    min-width: 350px;
+  }
+  .min-w-\[400px\] {
+    min-width: 400px;
+  }
   .border-collapse {
     border-collapse: collapse;
   }
@@ -181,12 +219,41 @@
   .justify-center {
     justify-content: center;
   }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
   .bg-dark-bg {
     background-color: var(--color-dark-bg);
+  }
+  .bg-dark-black {
+    background-color: var(--color-dark-black);
+  }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
+  .p-1\.5 {
+    padding: calc(var(--spacing) * 1.5);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
   }
   .text-white {
     color: var(--color-white);

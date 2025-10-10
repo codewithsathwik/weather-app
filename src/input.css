@@ -8,6 +8,7 @@
   --font-text: "Inter", sans-serif;
 
   --color-dark-bg : #1a1a1a;
+  --color-dark-black : #111;
 }
 
 @layer base{
