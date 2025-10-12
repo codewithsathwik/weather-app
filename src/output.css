@@ -15,12 +15,15 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --radius-xl: 0.75rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-heading: "Poppins", sans-serif;
+    --font-text: "Inter", sans-serif;
     --color-dark-bg: #1a1a1a;
     --color-dark-black: #111;
   }
@@ -174,32 +177,26 @@
   }
 }
 @layer utilities {
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+  .mb-2\.5 {
+    margin-bottom: calc(var(--spacing) * 2.5);
+  }
   .flex {
     display: flex;
+  }
+  .hidden {
+    display: none;
   }
   .table {
     display: table;
   }
-  .h-5 {
-    height: calc(var(--spacing) * 5);
-  }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
-  }
   .h-11 {
     height: calc(var(--spacing) * 11);
   }
-  .h-14 {
-    height: calc(var(--spacing) * 14);
-  }
-  .h-\[300px\] {
-    height: 300px;
-  }
-  .h-\[500px\] {
-    height: 500px;
-  }
-  .h-\[px\] {
-    height: px;
+  .h-\[200px\] {
+    height: 200px;
   }
   .h-full {
     height: 100%;
@@ -210,17 +207,8 @@
   .min-h-\[300px\] {
     min-height: 300px;
   }
-  .w-\[15\%\] {
-    width: 15%;
-  }
   .w-\[17\%\] {
     width: 17%;
-  }
-  .w-\[20\%\] {
-    width: 20%;
-  }
-  .w-\[80\%\] {
-    width: 80%;
   }
   .w-\[83\%\] {
     width: 83%;
@@ -228,26 +216,11 @@
   .w-\[90\%\] {
     width: 90%;
   }
-  .w-\[100\%\] {
-    width: 100%;
-  }
-  .w-\[400px\] {
-    width: 400px;
-  }
   .w-full {
     width: 100%;
   }
-  .max-w-\[400px\] {
-    max-width: 400px;
-  }
-  .min-w-\[200px\] {
-    min-width: 200px;
-  }
   .min-w-\[350px\] {
     min-width: 350px;
-  }
-  .min-w-\[400px\] {
-    min-width: 400px;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -273,32 +246,14 @@
   .justify-start {
     justify-content: flex-start;
   }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
-  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
   .gap-2\.5 {
     gap: calc(var(--spacing) * 2.5);
   }
-  .overflow-hidden {
-    overflow: hidden;
-  }
-  .overflow-x-clip {
-    overflow-x: clip;
-  }
-  .overflow-x-scroll {
-    overflow-x: scroll;
-  }
-  .overflow-y-clip {
-    overflow-y: clip;
-  }
   .rounded-\[7px\] {
     border-radius: 7px;
-  }
-  .rounded-\[10px\] {
-    border-radius: 10px;
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
@@ -322,9 +277,6 @@
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
-  .p-2\.5 {
-    padding: calc(var(--spacing) * 2.5);
-  }
   .text-center {
     text-align: center;
   }
@@ -334,22 +286,20 @@
   .font-heading {
     font-family: var(--font-heading);
   }
+  .font-text {
+    font-family: var(--font-text);
+  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
-  .overflow-ellipsis {
-    text-overflow: ellipsis;
-  }
-  .text-clip {
-    text-overflow: clip;
-  }
-  .text-ellipsis {
-    text-overflow: ellipsis;
   }
   .text-white {
     color: var(--color-white);
@@ -360,11 +310,6 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
-  }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .hover\:bg-blue-400 {
     &:hover {

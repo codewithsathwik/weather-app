@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="/src/style.css">
 </head>
 
-<body class="bg-dark-bg flex justify-center items-center text-white h-screen">
+<body class="bg-dark-bg flex justify-center items-center text-white h-screen font-text">
     <div
-        class="min-h-[300px] min-w-[350px] bg-dark-black p-2 rounded-xl custom-shadow flex flex-col justify-start items-center gap-1">
+        class="min-h-[300px] min-w-[350px] bg-dark-black p-2 rounded-xl custom-shadow flex flex-col justify-start items-center gap-2.5">
         <h2 class="font-heading text-center p-1 text-2xl">Weather App</h2>
 
         <!-- search bar -->
         <div class="w-[90%]  h-11 flex justify-around items-center gap-2.5">
             <div class="bg-dark-bg w-[83%] h-full rounded-[7px]">
-                <textarea name="search" id="cityName" class="w-full h-full text-xl p-1.5 text-start"></textarea>
+                <textarea name="search" id="cityName" class="w-full h-full text-xl p-1.5 text-start" placeholder="Enter city...."></textarea>
             </div>
             <button id="search-btn" class="bg-dark-bg w-[17%] h-full rounded-[7px] cursor-pointer flex justify-center items-center hover:bg-blue-400">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search"
@@ -28,6 +28,16 @@
             </button>
         </div>
         <!-- search bar completed-->
+
+
+
+        <!-- body code -->
+         <div class="h-[200px] bg-dark-bg w-[90%] mb-2.5 rounded-[7px] flex flex-col justify-center items-center">
+            
+            <div class=""><h2 class="text-2xl">Please enter the city</h2></div>  <!-- this should be hidden wen cit is entered -->
+
+         </div>
+
     </div>
 </body>
 
