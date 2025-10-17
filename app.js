@@ -13,23 +13,22 @@ searchBtn.addEventListener("click", async () => {
 
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
     let response = await fetch(url);
-    let data = response.json();
+    let data = await response.json();
 
     console.log(response);
     console.log(data);
     
     if (response.ok) {
-        let wea = data.main.temp + " °C";
+        let wea = `${data.main.temp} °C`;
         let des = data.weather[0].description;
         addContent(cityName, wea, des);
     }else{
         showError(cityName);
     }
-
 });
 
 function addContent(city, wea, des) {
-    cityHead.textContent = city;
+    cityHead.textContent = city.toUpperCase();
     weather.textContent = wea;
     description.textContent = des;
 }
@@ -38,6 +37,5 @@ function addContent(city, wea, des) {
 function showError(cityName){
     let errorMsg = document.querySelector("#error-msg h2");
     errorMsg.classList.remove("hidden");
-    
     errorMsg.textContent = `City not found , City : ${cityName}`;
 }
