@@ -1,3 +1,5 @@
+import {strCaps} from "./src/utilities.js";
+
 let searchBtn = document.querySelector("#search-btn");
 let cityHead = document.querySelector("#location");
 let weather = document.querySelector("#weather");
@@ -8,7 +10,6 @@ const API_KEY = "879dced3a1e103263502e51f8559d2f0";
 
 
 searchBtn.addEventListener("click", async () => {
-
     let cityName = document.querySelector("#cityName").value.trim();
     if (!cityName) {
         if (errorMsg) {
@@ -23,9 +24,8 @@ searchBtn.addEventListener("click", async () => {
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
         let response = await fetch(url);
         let data = await response.json();
-
-        console.log(response);
-        console.log(data);
+        // console.log(response);
+        // console.log(data);
         if (response.ok) {
             let wea = `${data.main.temp} °C`;
             let des = data.weather[0].description;
@@ -39,9 +39,9 @@ searchBtn.addEventListener("click", async () => {
 });
 
 function addContent(city, wea, des) {
-    cityHead.textContent = city.toUpperCase();
+    cityHead.textContent = strCaps(city);
     weather.textContent = wea;
-    description.textContent = des;
+    description.textContent = strCaps(des);
 }
 
 
