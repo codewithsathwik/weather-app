@@ -1,12 +1,12 @@
 import {strCaps} from "./src/utilities.js";
+import { API_KEY } from "./src/utilities.js";
 
 let searchBtn = document.querySelector("#search-btn");
 let cityHead = document.querySelector("#location");
 let weather = document.querySelector("#weather");
 let description = document.querySelector("#description");
 let errorMsg = document.querySelector("#error-msg h2");
-
-const API_KEY = "879dced3a1e103263502e51f8559d2f0";
+let detailsCon = document.querySelector("#details-container");
 
 
 searchBtn.addEventListener("click", async () => {
@@ -16,9 +16,11 @@ searchBtn.addEventListener("click", async () => {
             errorMsg.classList.add("hidden");
         }
         document.querySelector("#enter-msg").classList.remove("hidden");
+        detailsCon.classList.add("hidden");
         return;
     }
     document.querySelector("#enter-msg").classList.add("hidden");
+    
 
     try {
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
@@ -30,6 +32,7 @@ searchBtn.addEventListener("click", async () => {
             let wea = `${data.main.temp} °C`;
             let des = data.weather[0].description;
             addContent(cityName, wea, des);
+            detailsCon.classList.remove("hidden");
         } else {
             showError(cityName);
         }
@@ -46,7 +49,12 @@ function addContent(city, wea, des) {
 
 
 function showError(cityName) {
+    detailsCon.classList.add("hidden");
     errorMsg.classList.remove("hidden");
-    errorMsg.textContent =  cityName;
+    if(cityName.length > 25){
+        errorMsg.textContent = cityName;
+    }else{
+        errorMsg.textContent = `City not found.`;
+    }
     errorMsg.style.color = "red";
 }
