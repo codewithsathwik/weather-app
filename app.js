@@ -47,7 +47,6 @@ function addContent(city, wea, des) {
     description.textContent = strCaps(des);
 }
 
-
 function showError(cityName) {
     detailsCon.classList.add("hidden");
     errorMsg.classList.remove("hidden");
